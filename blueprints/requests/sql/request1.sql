@@ -1,0 +1,1 @@
+SELECT nameCustomer as "Имя", dateCustomer as "Дата" FROM carshop.customer

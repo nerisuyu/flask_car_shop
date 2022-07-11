@@ -1,0 +1,1 @@
+SELECT * FROM carshop.string WHERE idList='$id'

@@ -1,0 +1,1 @@
+SELECT * FROM carshop.part where idPart = '$idPart'

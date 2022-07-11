@@ -1,0 +1,1 @@
+﻿delete from carshop.part where idPart='$item_id'

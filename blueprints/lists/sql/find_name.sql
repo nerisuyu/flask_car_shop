@@ -1,0 +1,1 @@
+SELECT nameCustomer from carshop.customer WHERE idCustomer ='$id'

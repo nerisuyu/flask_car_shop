@@ -1,0 +1,1 @@
+delete from carshop.list where idlist='$id'

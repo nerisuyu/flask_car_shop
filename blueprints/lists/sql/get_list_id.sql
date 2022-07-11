@@ -1,0 +1,1 @@
+select idList from carshop.list where dateList=curdate() and idCustomer='$idCustomer' order by idList desc

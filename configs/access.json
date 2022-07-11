@@ -1,0 +1,31 @@
+{
+  "manager2":[
+    "edit_part",
+    "insert_part"
+  ],
+  "manager1": [
+    "choose_customer",
+    "edit_customers",
+    "insert_customer",
+    ""
+  ],
+  "admin" : [
+    "edit_part",
+    "insert_part",
+    "choose_customer",
+    "choose_list",
+    "show_list",
+    "edit_customers",
+    "insert_customer",
+    "auth",
+    "requests_index",
+    "request2",
+    "request1",
+    "list_orders_handler",
+    ""
+  ],
+  "unauthorized": [
+    "auth",
+    ""
+  ]
+}

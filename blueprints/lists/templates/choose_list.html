@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=3, shrink-to-fit=no">
+
+
+    <link href="https://bootswatch.com/5/minty/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <title>{% block title %}Main Menu{% endblock %}</title>
+  </head>
+  <body>
+
+
+    <h2 align="center">Накладные клиента {%if name%}{%for n in name%}{{n['nameCustomer']}}{%endfor%}{%endif%}</h2>
+
+    <div align="center">
+        {% if items%}
+        <table border=0 width=50%>
+            <tr>
+              <td>№</td>
+              <td>Дата Оформления</td>
+              <td>Сумма Заказа</td>
+            </tr>
+            {%for item in items%}
+            <tr>
+              <td>{{item['idlist']}}</td>
+              <td>{{item['dateList']}}</td>
+              <td>{{item['costList']}}</td>
+                <td>
+                    <br>
+                </td>
+                <td>
+                  <form action="" method="post">
+                      <input type="hidden" name="id" value="{{item['idlist']}}">
+                      <input type = "submit" name="action" value="Просмотреть">
+                  </form>
+              </td>
+            </tr>
+          {% endfor%}
+        </table>
+        {% else%}
+        <a>Накладных не найдено</a><br>
+            {%endif%}
+        <div align="center">
+        <br>
+            <a href='/lists/insert'> Оформить накладную</a><br>
+        </div>
+        <a href="/lists">Назад</a>
+    </div>
+
+   </body>
+</html>

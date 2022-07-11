@@ -1,0 +1,104 @@
+﻿<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=3, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <!--
+    <link rel="stylesheet" href="https://bootswatch.com/5/vapor/bootstrap.min.css"
+                            integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+                            -->
+
+    <link href="https://bootswatch.com/5/minty/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <title>{% block title %}Main Menu{% endblock %}</title>
+  </head>
+  <body>
+  <!--
+    <nav class="container-fluid navbar-dark bg-dark h-100 w-100">
+      <a class="navbar-brand" href="#">
+          Ква
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse w-100" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">
+                Home
+                <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+                Link
+            </a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Dropdown
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="#">Action</a>
+              <a class="dropdown-item" href="#">Another action</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">Something else here</a>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" href="#">Disabled</a>
+          </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+      </div>
+    </nav>
+    штука сверху-->
+
+
+    <div align="center">
+        <br>
+        <a href='/customers/insert'>Зарегистрировать клиента</a><br>
+    </div>
+    <h2 align="center">Все клиенты</h2>
+
+    <div align="center">
+        {% if items%}
+        <table border=0 width=50%>
+            <tr>
+              <td>№</td>
+              <td>Имя</td>
+              <td>Дата Регистрации</td>
+              <td>Город</td>
+            </tr>
+            {%for item in items%}
+            <tr>
+              <td>{{item['idCustomer']}}</td>
+              <td>{{item['nameCustomer']}}</td>
+              <td>{{item['dateCustomer']}}</td>
+              <td>{{item['cityCustomer']}}</td>
+                <td>
+                    <br>
+                </td>
+
+
+                <td>
+                  <form action="" method="post">
+                      <input type="hidden" name="id" value="{{item['idCustomer']}}">
+                      <input type = "submit" name="action" value="Удалить клиента">
+                  </form>
+              </td>
+            </tr>
+          {% endfor%}
+        </table>
+        {% endif%}
+        <a href="/">Назад</a>
+    </div>
+
+   </body>
+</html>

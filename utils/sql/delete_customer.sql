@@ -1,0 +1,1 @@
+delete from carshop.customer where idCustomer='$id'

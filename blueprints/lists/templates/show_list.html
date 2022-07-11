@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=3, shrink-to-fit=no">
+    <link href="https://bootswatch.com/5/minty/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <title>{% block title %}Main Menu{% endblock %}</title>
+  </head>
+  <body>
+    <h2 align="center">Накладная от {{date[0]['dateList']}} </h2>
+    <div align="center">
+        {% if items%}
+        <table border=0 width=50%>
+            <tr>
+                <td>№ товара</td>
+                <td>Тип</td>
+                <td>Количество</td>
+                <td>Цена</td>
+            </tr>
+            {%for item in items%}
+            <tr>
+                <td>{{item[0]['idPart']}}</td>
+                <td>{{item[1]['typePart']}}</td>
+                <td>{{item[0]['amountString']}}</td>
+                <td>{{item[1]['costPart']}}</td>
+            </tr>
+          {% endfor%}
+        </table>
+        Сумма:{{summ}}
+        {% else%}
+        <a>Позиций не найдено</a><br>
+            {%endif%}
+        <div align="center">
+        </div>
+        <a href="/lists/remove_list">Удалить накладную</a>
+        <br>
+        <a href="/lists/pick">Назад</a>
+    </div>
+   </body>
+</html>

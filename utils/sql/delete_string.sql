@@ -1,0 +1,1 @@
+delete from carshop.string where idString='$id'
